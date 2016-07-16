@@ -8,3 +8,8 @@ img {
   width: 80%;
   margin: auto;
 }
+
+#admin {
+  float: right;
+  margin-top: 20px;
+}
