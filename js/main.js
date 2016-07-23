@@ -1,5 +1,4 @@
 // Model:
-
 var model = {
   currentCat: null,
   cats: [
@@ -78,6 +77,12 @@ var catView = {
         this.catImageElem = document.getElementById('cat-img');
         this.countElem = document.getElementById('cat-count');
 
+        //admin area view
+        //this.adminElem = document.getElementById('adminArea');
+        this.adminName = document.getElementById('cat-name-admin');
+        this.adminUrl = document.getElementById('cat-url-admin');
+        this.adminClicks = document.getElementById('cat-count-admin');
+
         // on click, increment the current cat's counter
         this.catImageElem.addEventListener('click', function(){
             octopus.incrementCounter();
@@ -93,6 +98,24 @@ var catView = {
         this.countElem.textContent = 'Clicks: ' + currentCat.clickCount;
         this.catNameElem.textContent = currentCat.name;
         this.catImageElem.src = currentCat.imgSrc;
+
+        //admin view rendering and display with savea anc cacle buttons
+        this.adminName.textContent = 'Name of cat: ' + currentCat.name;
+        this.adminUrl.textContent = 'Url of image: ' + currentCat.imgSrc;
+        this.adminClicks.textContent = 'Amount of clicks: ' + currentCat.clickCount;
+        var adminButton = document.getElementById('admin');
+        var adminField = document.getElementById('adminArea');
+        var saveButton = document.getElementById('save');
+        var cancelButton = document.getElementById('cancel');
+          adminButton.addEventListener('click', function() {
+            adminField.style.display = 'initial';
+        })
+          saveButton.addEventListener('click', function() {
+            adminField.style.display = 'none';
+          })
+          cancelButton.addEventListener('click', function() {
+            adminField.style.display = 'none';
+          })
     }
 };
 
@@ -107,7 +130,7 @@ var catListView = {
     },
 
     render: function() {
-        var cat, elem, i;
+        var cat, elem, i, adminCatName, adminButton, adminArea;
         // get the cats we'll be rendering from the octopus
         var cats = octopus.getCats();
 
@@ -121,7 +144,10 @@ var catListView = {
 
             // make a new cat list item and set its text
             elem = document.createElement('li');
+            //make a new list for admin
+            adminCatName = document.createElement('li');
             elem.textContent = cat.name;
+            adminCatName.textContent = cat.name;
 
             // on click, setCurrentCat and render the catView
             // (this uses our closure-in-a-loop trick to connect the value
@@ -138,6 +164,7 @@ var catListView = {
         }
     }
 };
+
 
 // make it go!
 octopus.init();

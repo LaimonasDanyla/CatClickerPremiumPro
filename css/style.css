@@ -5,11 +5,15 @@
 }
 
 img {
-  width: 80%;
+  width: 30%;
   margin: auto;
 }
 
 #admin {
   float: right;
   margin-top: 20px;
+}
+
+#adminArea {
+  display: none;
 }
