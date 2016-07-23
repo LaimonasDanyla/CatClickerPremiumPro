@@ -100,9 +100,9 @@ var catView = {
         this.catImageElem.src = currentCat.imgSrc;
 
         //admin view rendering and display with savea anc cacle buttons
-        this.adminName.textContent = 'Name of cat: ' + currentCat.name;
-        this.adminUrl.textContent = 'Url of image: ' + currentCat.imgSrc;
-        this.adminClicks.textContent = 'Amount of clicks: ' + currentCat.clickCount;
+        this.adminName.value = currentCat.name;
+        this.adminUrl.value = currentCat.imgSrc;
+        this.adminClicks.value = currentCat.clickCount;
         var adminButton = document.getElementById('admin');
         var adminField = document.getElementById('adminArea');
         var saveButton = document.getElementById('save');
