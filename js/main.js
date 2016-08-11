@@ -62,7 +62,18 @@ var octopus = {
     incrementCounter: function() {
         model.currentCat.clickCount++;
         catView.render();
+    },
+
+    // set cat name from admin area
+    getCurrentCatAdmin: function() {
+      var adminSetName = document.getElementById('cat-name-admin').value;
+      return adminSetName;
+    },
+    setCurrentCatAdmin: function(cat) {
+      $('#cat-name-admin').value = cat;
+      console.log("at octopus", cat);
     }
+
 };
 
 
@@ -109,9 +120,19 @@ var catView = {
         var cancelButton = document.getElementById('cancel');
           adminButton.addEventListener('click', function() {
             adminField.style.display = 'initial';
-        })
+          })
           saveButton.addEventListener('click', function() {
-            adminField.style.display = 'none';
+            var oldName = document.getElementById('cat-name-admin').value;
+            var inputName = document.getElementById('cat-name-admin').value;
+            var newName = oldName.replace(oldName, inputName);
+            console.log("cat View place: ", newName);
+            var replaceName = document.getElementById('cat-name');
+            replaceName.textContent = newName;
+            //change names in the list
+            //var replaceListName = document.getElementById('cat-list');
+            //replaceListName.textContent = newName;
+
+            //adminField.style.display = 'none';
           })
           cancelButton.addEventListener('click', function() {
             adminField.style.display = 'none';
@@ -124,19 +145,19 @@ var catListView = {
     init: function() {
         // store the DOM element for easy access later
         this.catListElem = document.getElementById('cat-list');
-
         // render this view (update the DOM elements with the right values)
         this.render();
     },
 
     render: function() {
-        var cat, elem, i, adminCatName, adminButton, adminArea;
+        var cat, elem, i, saveButton;
         // get the cats we'll be rendering from the octopus
         var cats = octopus.getCats();
 
         // empty the cat list
         this.catListElem.innerHTML = '';
 
+        saveButton = document.getElementById('save');
         // loop over the cats
         for (i = 0; i < cats.length; i++) {
             // this is the cat we're currently looping over
@@ -144,10 +165,14 @@ var catListView = {
 
             // make a new cat list item and set its text
             elem = document.createElement('li');
-            //make a new list for admin
-            adminCatName = document.createElement('li');
+            elem.id = "cat" + i;
             elem.textContent = cat.name;
-            adminCatName.textContent = cat.name;
+
+            saveButton.addEventListener('click', function() {
+
+              
+            })
+
 
             // on click, setCurrentCat and render the catView
             // (this uses our closure-in-a-loop trick to connect the value
@@ -158,6 +183,7 @@ var catListView = {
                     catView.render();
                 };
             })(cat));
+
 
             // finally, add the element to the list
             this.catListElem.appendChild(elem);
