@@ -31,6 +31,10 @@ var model = {
 };
 
 
+// add url via admin field
+var inputForm = document.getElementById('form1');
+
+
 
 /* ======= Octopus ======= */
 
@@ -62,16 +66,6 @@ var octopus = {
     incrementCounter: function() {
         model.currentCat.clickCount++;
         catView.render();
-    },
-
-    // set cat name from admin area
-    getCurrentCatAdmin: function() {
-      var adminSetName = document.getElementById('cat-name-admin').value;
-      return adminSetName;
-    },
-    setCurrentCatAdmin: function(cat) {
-      $('#cat-name-admin').value = cat;
-      console.log("at octopus", cat);
     }
 
 };
@@ -110,7 +104,7 @@ var catView = {
         this.catNameElem.textContent = currentCat.name;
         this.catImageElem.src = currentCat.imgSrc;
 
-        //admin view rendering and display with savea anc cacle buttons
+        //admin view rendering and display with save and cancel buttons
         this.adminName.value = currentCat.name;
         this.adminUrl.value = currentCat.imgSrc;
         this.adminClicks.value = currentCat.clickCount;
@@ -128,11 +122,15 @@ var catView = {
             console.log("cat View place: ", newName);
             var replaceName = document.getElementById('cat-name');
             replaceName.textContent = newName;
-            //change names in the list
-            //var replaceListName = document.getElementById('cat-list');
-            //replaceListName.textContent = newName;
 
-            //adminField.style.display = 'none';
+          //input of URL from admin
+          var inputUrl = inputForm.elements["imgUrlAdmin"].value;
+          currentCat.imgSrc = inputUrl;
+          console.log(inputUrl);
+          console.log(currentCat.imgSrc);
+          var catImageElemAdmin = document.getElementById('cat-img');
+          catImageElemAdmin.src = currentCat.imgSrc;
+
           })
           cancelButton.addEventListener('click', function() {
             adminField.style.display = 'none';
@@ -170,7 +168,7 @@ var catListView = {
 
             saveButton.addEventListener('click', function() {
 
-              
+
             })
 
 
