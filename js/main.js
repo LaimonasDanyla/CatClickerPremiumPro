@@ -30,12 +30,6 @@ var model = {
   ]
 };
 
-
-// add url via admin field
-var inputForm = document.getElementById('form1');
-
-
-
 /* ======= Octopus ======= */
 
 var octopus = {
@@ -116,20 +110,29 @@ var catView = {
             adminField.style.display = 'initial';
           })
           saveButton.addEventListener('click', function() {
-            var oldName = document.getElementById('cat-name-admin').value;
+
+            /*var oldName = document.getElementById('cat-name-admin').value;
             var inputName = document.getElementById('cat-name-admin').value;
             var newName = oldName.replace(oldName, inputName);
             console.log("cat View place: ", newName);
             var replaceName = document.getElementById('cat-name');
             replaceName.textContent = newName;
+            */
 
-          //input of URL from admin
-          var inputUrl = inputForm.elements["imgUrlAdmin"].value;
-          currentCat.imgSrc = inputUrl;
-          console.log(inputUrl);
-          console.log(currentCat.imgSrc);
-          var catImageElemAdmin = document.getElementById('cat-img');
-          catImageElemAdmin.src = currentCat.imgSrc;
+            //input of URL from admin
+            var inputForm = document.getElementById('form1');
+
+            // input of cat name at the picture
+            var inputName = inputForm.elements["catNameAdmin"].value;
+            currentCat.name = inputName;
+            var catNameElemAdmin = document.getElementById('cat-name');
+            catNameElemAdmin.textContent = currentCat.name;
+
+            //input of url
+            var inputUrl = inputForm.elements["imgUrlAdmin"].value;
+            currentCat.imgSrc = inputUrl;
+            var catImageElemAdmin = document.getElementById('cat-img');
+            catImageElemAdmin.src = currentCat.imgSrc;
 
           })
           cancelButton.addEventListener('click', function() {
@@ -166,11 +169,6 @@ var catListView = {
             elem.id = "cat" + i;
             elem.textContent = cat.name;
 
-            saveButton.addEventListener('click', function() {
-
-
-            })
-
 
             // on click, setCurrentCat and render the catView
             // (this uses our closure-in-a-loop trick to connect the value
@@ -182,9 +180,11 @@ var catListView = {
                 };
             })(cat));
 
-
             // finally, add the element to the list
             this.catListElem.appendChild(elem);
+
+            //change cat's name in the list from admin are
+
         }
     }
 };
