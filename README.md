@@ -42,4 +42,4 @@ accordingly in the cat display area
 - Cancel and Save buttons hide the admin area   
 - At save button click values from Admin fields are taken to update Cat
 display area.
-- Cancel button does not return default values.  
+- Cancel button calls page reload to return to previous values.  

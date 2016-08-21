@@ -135,6 +135,7 @@ var catView = {
           })
           cancelButton.addEventListener('click', function() {
             adminField.style.display = 'none';
+            location.reload();
           })
     }
 };
