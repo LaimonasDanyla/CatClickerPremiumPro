@@ -108,12 +108,14 @@ var catView = {
         var saveButton = document.getElementById('save');
         var cancelButton = document.getElementById('cancel');
 
-        //seting form variable to use later in code
-        var inputForm = document.getElementById('form1');
+
           adminButton.addEventListener('click', function() {
             adminField.style.display = 'initial';
           })
           saveButton.addEventListener('click', function() {
+
+            //seting form variable to use later in code
+            var inputForm = document.getElementById('form1');
 
             //get the input value
             var inputName = inputForm.elements["catNameAdmin"].value;
@@ -132,7 +134,6 @@ var catView = {
 
           })
           cancelButton.addEventListener('click', function() {
-            catView.render();
             adminField.style.display = 'none';
           })
     }
