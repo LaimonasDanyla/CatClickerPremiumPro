@@ -5,27 +5,27 @@ var model = {
     {
       clickCount : 0,
       name : 'Kitkat',
-      imgSrc : 'https://pixabay.com/static/uploads/photo/2012/10/12/17/12/cat-61079_960_720.jpg'
+      imgSrc : 'http://www.imagesource.com/Doc/IS0/Media/TR3_WATERMARKED/e/9/f/3/IS098T7MB.jpg'
     },
     {
       clickCount : 0,
       name : 'Kit-teacup',
-      imgSrc : 'https://pixabay.com/static/uploads/photo/2013/09/07/08/29/cat-179842_960_720.jpg'
+      imgSrc : 'http://www.imagesource.com/Doc/IS0/Media/TR3_WATERMARKED/8/f/4/1/IS099M4YQ.jpg'
     },
     {
       clickCount : 0,
       name : 'Kittin around',
-      imgSrc : 'https://pixabay.com/static/uploads/photo/2013/12/12/03/08/kitten-227009_960_720.jpg'
+      imgSrc : 'http://www.imagesource.com/Doc/IS0/Media/TR3_WATERMARKED/8/6/c/b/IS816-030.jpg'
     },
     {
       clickCount : 0,
       name : 'Kittles',
-      imgSrc : 'https://pixabay.com/static/uploads/photo/2015/11/15/20/21/cat-1044750_960_720.jpg'
+      imgSrc : 'http://www.imagesource.com/Doc/IS0/Media/TR3_WATERMARKED/b/f/f/1/IS09AN7NF.jpg'
     },
     {
       clickCount : 0,
       name : 'Kitty Kitty Bang Bang',
-      imgSrc : 'https://pixabay.com/static/uploads/photo/2016/05/18/21/33/cat-1401637_960_720.jpg'
+      imgSrc : 'http://www.imagesource.com/Doc/IS0/Media/TR3_WATERMARKED/7/3/e/c/IS09AA7RX.jpg'
     }
   ]
 };
