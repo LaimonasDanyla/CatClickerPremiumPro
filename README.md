@@ -32,3 +32,14 @@ disappears.
 
  --------SOLUTION----------
 - The initial MVO code example taken from previous project task solution.
+- Admin area added
+- Save and cancel buttons added
+- Admin area shows name and URL of currently selected cat
+- New name entered via Admin name field  will be accepted and changed
+accordingly in the cat display area
+- New URL of a picture can be added and picture will change.
+- Name will remain as previous in the cat list view.
+- Cancel and Save buttons hide the admin area   
+- At save button click values from Admin fields are taken to update Cat
+display area.
+- Cancel button does not return default values.  
