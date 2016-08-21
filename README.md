@@ -43,3 +43,5 @@ accordingly in the cat display area
 - At save button click values from Admin fields are taken to update Cat
 display area.
 - Cancel button calls page reload to return to previous values.  
+
+LINK: https://laimonasdanyla.github.io/CatClickerPremiumPro/
